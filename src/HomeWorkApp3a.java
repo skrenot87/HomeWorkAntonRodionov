@@ -19,6 +19,8 @@ public class HomeWorkApp3a {
         System.out.println(Arrays.toString(acceptAndFill(len, initialValue)));
         System.out.println(Arrays.toString(doSearch(arraysearch)));
         System.out.println(doCompare(compare));
+        doBias(compare, len);
+        System.out.println(Arrays.toString(compare));
 
     }
 
@@ -120,5 +122,27 @@ public class HomeWorkApp3a {
         return false;
     }
 
+    public static void doBias(int[] compare, int N) {
+        int number = N > 0 ? N : -N;
+        for (int i = 0; i < number; i++) {
+            if (N > 0) {
+                int save = compare[0];
+                for (int j = 0; j < compare.length - 1; j++) {
+                    compare[j] = compare[j + 1];
+                }
+                compare[compare.length - 1] = save;
+            } else {
+                int save = compare[compare.length - 1];
+                for (int j = compare.length - 1; j > 0; j--) {
+                    compare[j] = compare[j - 1];
+                }
+                compare[0] = save;
+            }
+        }
+    }
 }
+
+
+
+
 
