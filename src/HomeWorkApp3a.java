@@ -41,7 +41,7 @@ public class HomeWorkApp3a {
     public static int[] makeAnArray() {
         int[] array = new int[100];
         for (int i = 0; i < array.length; i++) {
-            array[i] = i;
+            array[i] = i + 1;
             System.out.print(array[i] + " ");
         }
         return array;
